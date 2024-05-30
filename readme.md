@@ -1,6 +1,4 @@
-# RubyOnRails_Especificacoes_do_Banco_De_Dados
-
-<h1>Parte 1</h1>
+# Parte 1: RubyOnRails: Especificações do SQL
 
 <br />
 
@@ -23,7 +21,7 @@
 <br />
 
 <p>
-    Para melhor normalizacão do banco de dados foram criadas colunas que não se encontram no diagrama:
+    Para melhor normalização do banco de dados foram criadas colunas que não se encontram no diagrama:
 </p>
 
 <ul>
@@ -47,8 +45,6 @@
     <li>Na tabela "Telefone": ID NOT NULL AUTOINCRMENT (SERIAL) PRIMARY KEY, ID_FORNECEDOR NOT NULL.</li>
     <li>Na tabela "Transportadora": ID NOT NULL AUTOINCRMENT (SERIAL) PRIMARY KEY.</li>
 </ul>
-
-# RubyOnRails_Script_Banco_De_Dados
 
 <br />
 
@@ -162,4 +158,3 @@ CREATE TABLE IF NOT EXISTS telefone
         ON DELETE RESTRICT
 );
 
-```sql

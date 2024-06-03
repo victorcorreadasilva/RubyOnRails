@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_hora: 2024-06-02 14:28:17
+  numero_nota_fiscal: MyString
+  valor_frete: 9.99
+  valor_desconto: 9.99
+  valor_total: 9.99
+
+two:
+  data_hora: 2024-06-02 14:28:17
+  numero_nota_fiscal: MyString
+  valor_frete: 9.99
+  valor_desconto: 9.99
+  valor_total: 9.99

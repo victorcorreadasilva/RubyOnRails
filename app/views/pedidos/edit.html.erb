@@ -1,0 +1,69 @@
+<h1><%= action_name.capitalize %> Pedido</h1>
+
+<%= form_with(model: @pedido, local: true) do |form| %>
+  <% if @pedido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pedido.errors.count, "error") %> proíbem este pedido de ser salvo:</h2>
+
+      <ul>
+        <% @pedido.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :data_hora %>
+    <%= form.datetime_select :data_hora %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero_nota_fiscal %>
+    <%= form.text_field :numero_nota_fiscal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor_frete %>
+    <%= form.number_field :valor_frete, step: 0.01 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor_desconto %>
+    <%= form.number_field :valor_desconto, step: 0.01 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor_total %>
+    <%= form.number_field :valor_total, step: 0.01 %>
+  </div>
+
+  <h3>Itens do Pedido</h3>
+  <%= form.fields_for :itens_pedido do |item_form| %>
+    <div class="field">
+      <%= item_form.label :nome %>
+      <%= item_form.text_field :nome %>
+    </div>
+
+    <div class="field">
+      <%= item_form.label :quantidade %>
+      <%= item_form.number_field :quantidade %>
+    </div>
+
+    <div class="field">
+      <%= item_form.label :preco %>
+      <%= item_form.number_field :preco, step: 0.01 %>
+    </div>
+
+    <%= item_form.hidden_field :_destroy %>
+    <%= link_to 'Remover', '#', class: 'remove_fields' %>
+  <% end %>
+
+  <%= link_to_add_fields "Adicionar Item", f, :itens_pedido %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Voltar', pedidos_path %>
